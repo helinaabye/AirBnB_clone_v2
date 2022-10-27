@@ -10,6 +10,7 @@ def do_pack():
     archivePath = "web_static_" + date.strftime("%Y%m%d%H%M%S") + "." + "tgz"
 
     local("mkdir -p versions")
+
     createdFile = local("tar -cvzf versions/{} web_static".format(archivePath))
 
     if createdFile is not None:
