@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""A fabric python script that generates a .tgz archive from the contents of the web_static folder"""
+"""A fabric python script that generates a .tgz archive from the
+contents of the web_static folder
+"""
 from datetime import datetime
 from os.path import isdir
 from fabric.api import *
@@ -11,7 +13,7 @@ def do_pack():
     archivePath = "web_static_" + date.strftime("%Y%m%d%H%M%S") + "." + "tgz"
 
     if isdir("versions") is False:
-            local("mkdir versions")
+            local("mkdir -p versions")
 
     createdFile = local("tar -cvzf versions/{} web_static".format(archivePath))
 
