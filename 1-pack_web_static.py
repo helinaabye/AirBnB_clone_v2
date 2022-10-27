@@ -7,7 +7,7 @@ from fabric.api import local
 
 def do_pack():
     """This method creates a tar archive of the directory web_static"""
-    date = datetime.utcnow()
+    date = datetime.now()
     file = "versions/web_static_{}{}{}{}{}{}.tgz".format(date.year, date.month, date.day, date.hour, date.minute, date.second)
 
     local("mkdir -p versions")
