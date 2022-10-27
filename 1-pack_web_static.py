@@ -7,7 +7,7 @@ from fabric.api import *
 def do_pack():
     """This method creates a tar archive of the directory web_static"""
     date = datetime.now()
-    archivePath = "web_static_" + date.strftime("%Y%m%d%H%M%S") + ".tgz"
+    archivePath = "web_static_" + date.strftime("%Y%m%d%H%M%S") + "." + "tgz"
 
     local("mkdir -p versions")
     createdFile = local("tar -cvzf versions/{} web_static".format(archivePath))
